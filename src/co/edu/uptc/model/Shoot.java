@@ -1,10 +1,9 @@
 package co.edu.uptc.model;
 
 /**
- * Def: Shoot class enumerado de las posibles posiciones en la diana que puede
- * obtener el arquero al realizar un lanzamiento con su correspondiente puntaje
+ * Def: Shoot class listed of possible positions on the bullseye you can get the
+ * goalkeeper when making a pitch with their corresponding score
  * 
- * @author Daniel Torres
  */
 
 public enum Shoot {

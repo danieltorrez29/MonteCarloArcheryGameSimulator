@@ -1,16 +1,15 @@
 package co.edu.uptc.model;
 
 /**
- * Enumerado Género que muestra los distintos tipos de género determinado por un
- * caracter.
- * 
- * @author Daniel Torres
+ * Enumerated Gender showing the different types of gender determined by a
+ * character.
+ *
  */
 
 public enum Gender {
 
 	MALE('M'), FEMALE('F');
-	
+
 	private char gender;
 
 	private Gender(char gender) {

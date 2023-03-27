@@ -3,9 +3,8 @@ package co.edu.uptc.model;
 import java.util.ArrayList;
 
 /**
- * Team class
+ * Team class that manages the team that integrates the game
  * 
- * @author Daniel Torres
  */
 
 public class Team {
@@ -13,24 +12,26 @@ public class Team {
 	private ArrayList<Archer> archers;
 	private int score;
 	private int code;
+	private int wonRounds;
 
 	/**
-	 * Constructor method
+	 * Constructor method that manages the team that integrates the game
 	 * 
-	 * @param archers
-	 * @param score
-	 * @param code
+	 * @param archers archers belonging to the team
+	 * @param score   team score
+	 * @param code    team code
 	 */
 
 	public Team(ArrayList<Archer> archers, int code) {
 		this.archers = archers;
 		this.code = code;
 		score = 0;
+		wonRounds = 0;
 	}
 
 	/**
 	 * 
-	 * getLuckyArcher Archer method
+	 * getLuckyArcher Archer method who gets the luckiest player
 	 * 
 	 * @return Archer
 	 */
@@ -49,7 +50,8 @@ public class Team {
 
 	/**
 	 * 
-	 * increaseLuckToArcher void method
+	 * increaseLuckToArcher void method which increases the luck of the player who
+	 * won the riffle
 	 */
 
 	public void increaseLuckToArcher() {
@@ -58,7 +60,8 @@ public class Team {
 
 	/**
 	 * 
-	 * grantThrowByLuckyArcher void method
+	 * grantThrowByLuckyArcher void method that grants an additional throw to the
+	 * luckiest player
 	 * 
 	 * @param round
 	 */
@@ -67,11 +70,13 @@ public class Team {
 		Archer archer = getLuckyArcher();
 		score += archer.individualLaunch();
 		archer.increaseWonRaffles(round);
+		archer.increaseCountLuck();
 	}
 
 	/**
 	 * 
-	 * giveExtraThrowByThreeThrows void method
+	 * giveExtraThrowByThreeThrows void methodwhich gives an extra throw for 3 shots
+	 * won
 	 */
 
 	public void giveExtraThrowByThreeThrows() {
@@ -83,7 +88,7 @@ public class Team {
 
 	/**
 	 * 
-	 * obtainMostScoredArcher Archer method
+	 * obtainMostScoredArcher Archer method that the player with the highest score
 	 * 
 	 * @return Archer
 	 */
@@ -98,9 +103,10 @@ public class Team {
 
 	/**
 	 * 
-	 * obtainMostWonRounds Archer method
+	 * obtainMostWonRounds Archer method which the archer obtains with more rounds
+	 * won
 	 * 
-	 * @return Archer
+	 * @return Archer archer with more rounds won
 	 */
 
 	public Archer obtainMostWonRounds() {
@@ -113,9 +119,9 @@ public class Team {
 
 	/**
 	 * 
-	 * obtainRoundScore int method
+	 * obtainRoundScore int method who gets the score for each round
 	 * 
-	 * @return int
+	 * @return int score per round
 	 */
 
 	public int obtainRoundScore() {
@@ -127,9 +133,9 @@ public class Team {
 
 	/**
 	 * 
-	 * obtainTotalScore int method
+	 * obtainTotalScore int method who gets the total team score
 	 * 
-	 * @return int
+	 * @return int total team score
 	 */
 
 	public int obtainTotalScore() {
@@ -141,9 +147,9 @@ public class Team {
 
 	/**
 	 * 
-	 * obtainMostLuckArcher Archer method
+	 * obtainMostLuckArcher Archer method who gets the luckiest archer on the team
 	 * 
-	 * @return Archer
+	 * @return Archer luckiest archer
 	 */
 
 	public Archer obtainMostLuckArcher() {
@@ -151,6 +157,21 @@ public class Team {
 		for (int i = 1; i < archers.size(); i++)
 			target = archers.get(i).getCountLuck() > target.getCountLuck() ? archers.get(i) : target;
 		return target;
+	}
+
+	/**
+	 * 
+	 * obtainMostExperienced Archer method that gets the most experienced archer
+	 * 
+	 * @return Archer experienced archer
+	 */
+
+	public Archer obtainMostExperienced() {
+		Archer mostExperiencedArcher = archers.get(0);
+		for (int i = 1; i < archers.size(); i++)
+			if (archers.get(i).getExperience() > mostExperiencedArcher.getExperience())
+				mostExperiencedArcher = archers.get(i);
+		return mostExperiencedArcher;
 	}
 
 	public int getScore() {
@@ -163,5 +184,39 @@ public class Team {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	public ArrayList<Archer> getArchers() {
+		return archers;
+	}
+
+	public int getWonRounds() {
+		return wonRounds;
+	}
+
+	public void increaseWonRounds() {
+		wonRounds++;
+	}
+
+	/**
+	 * 
+	 * decreaseResistanceByExperience void method that lowers the archer’s
+	 * resistance when he has 9 experience points
+	 */
+
+	public void decreaseResistanceByExperience() {
+		for (Archer archer : archers)
+			if (archer.getExperience() == 9)
+				archer.decreaseResistanceByExperience();
+	}
+
+	/**
+	 * 
+	 * regainRoundPoints void method that restores rounds to their original values
+	 */
+
+	public void regainRoundPoints() {
+		for (Archer archer : archers)
+			archer.regainRoundPoints();
 	}
 }

@@ -3,9 +3,8 @@ package co.edu.uptc.model;
 import java.util.Random;
 
 /**
- * Archer class
+ * Class responsible for managing everything related to archer
  * 
- * @author Daniel Torres
  */
 
 public class Archer {
@@ -25,7 +24,7 @@ public class Archer {
 
 	/**
 	 * 
-	 * Constructor method
+	 * 
 	 * 
 	 * @param code
 	 */
@@ -86,7 +85,8 @@ public class Archer {
 
 	/**
 	 * 
-	 * launch void method
+	 * launch void method that which allows you to throw the player and adds the
+	 * respective score to your throw and subtracts 5 resistance points
 	 */
 
 	public void launch() {
@@ -103,7 +103,8 @@ public class Archer {
 
 	/**
 	 * 
-	 * individualLaunch int method
+	 * individualLaunch int method that determines the release taking into account
+	 * the values associated with each gender
 	 * 
 	 * @return int
 	 */
@@ -114,10 +115,10 @@ public class Archer {
 
 	/**
 	 * 
-	 * throwingMale int method
+	 * throwingMale int method that determines the of man launch using the monte
+	 * carlo method taking into account the specified values
 	 * 
-	 * @param random
-	 * @return
+	 * @return launch score for being a woman
 	 */
 
 	private int throwingMale() {
@@ -128,7 +129,7 @@ public class Archer {
 		else if (random > 0.2 && random <= 0.53)
 			score = Shoot.INTERMEDIATE.getScore();
 		else if (random > 0.53 && random <= 0.93)
-			score = Shoot.INTERMEDIATE.getScore();
+			score = Shoot.OUTSIDE.getScore();
 		else
 			score = Shoot.ERROR.getScore();
 		return score;
@@ -136,10 +137,10 @@ public class Archer {
 
 	/**
 	 * 
-	 * throwingFemale int method
-	 * 
-	 * @param random
-	 * @return
+	 * throwingFemale int method that determines the of woman launch using the monte
+	 * carlo method taking into account the specified values
+	 *
+	 * @return launch score for being a woman
 	 */
 
 	private int throwingFemale() {
@@ -150,7 +151,7 @@ public class Archer {
 		else if (random > 0.3 && random <= 0.68)
 			score = Shoot.INTERMEDIATE.getScore();
 		else if (random > 0.68 && random <= 0.95)
-			score = Shoot.INTERMEDIATE.getScore();
+			score = Shoot.OUTSIDE.getScore();
 		else
 			score = Shoot.ERROR.getScore();
 		return score;
@@ -167,7 +168,9 @@ public class Archer {
 
 	/**
 	 * 
-	 * increaseWonRaffles void method
+	 * increaseWonRaffles void method that increases consecutive draws won
+	 * 
+	 * @param round
 	 */
 
 	public void increaseWonRaffles(int round) {
@@ -200,7 +203,7 @@ public class Archer {
 	 * generateresistence method that gets a random resistence based on Normal
 	 * method.
 	 * 
-	 * @return int
+	 * @return int resistance value
 	 */
 
 	private int generateResistance() {
@@ -211,7 +214,7 @@ public class Archer {
 	 * 
 	 * generateLuck method that gets a random luck based on Uniform method.
 	 * 
-	 * @return int
+	 * @return int archer’s luck
 	 */
 
 	private double generateLuck() {
@@ -278,7 +281,7 @@ public class Archer {
 
 	/**
 	 * 
-	 * regainRoundPoints void method
+	 * regainRoundPoints void method that sets round points to zero
 	 */
 
 	public void regainRoundPoints() {
@@ -287,7 +290,7 @@ public class Archer {
 
 	/**
 	 * 
-	 * increaseCountLuck void method
+	 * increaseCountLuck void method that increase luck
 	 */
 
 	public void increaseCountLuck() {
@@ -296,21 +299,10 @@ public class Archer {
 
 	/**
 	 * 
-	 * regainCountLuck void method
+	 * regainCountLuck void method that sets count luck to zero
 	 */
 
 	public void regainCountLuck() {
 		countLuck = 0;
-	}
-
-	/**
-	 * toString overwrite method
-	 */
-
-	@Override
-	public String toString() {
-		return "Archer [code=" + code + ", gender=" + gender + ", resistance=" + resistance + ", experience="
-				+ experience + ", luck=" + luck + ", points=" + points + ", roundPoints=" + roundPoints + ", wonRounds="
-				+ wonRounds + ", wonRaffles=" + wonRaffles + "]";
 	}
 }
