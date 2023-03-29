@@ -15,14 +15,31 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import co.edu.uptc.model.Archer;
 
 /**
- * GraphFrame class that generates the archers graph vs game
+ * GraphFrame class that generates the archers graph vs game.
  * 
  */
 
 public class GraphFrame extends JFrame {
 
+	/**
+	 * Constant.
+	 */
+
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * JFrame content pane.
+	 */
+
 	private JPanel contentPane;
+
+	/**
+	 * 
+	 * Constructor method.
+	 * 
+	 * @param archers.
+	 * @param gameNumber.
+	 */
 
 	public GraphFrame(ArrayList<Archer> archers, int gameNumber) {
 		super("Archers vs Game");
@@ -35,6 +52,11 @@ public class GraphFrame extends JFrame {
 		setVisible(true);
 	}
 
+	/**
+	 * 
+	 * setLookAndFeel void method.
+	 */
+
 	private void setLookAndFeel() {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -42,6 +64,14 @@ public class GraphFrame extends JFrame {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * 
+	 * initComponents void method.
+	 * 
+	 * @param archers.
+	 * @param gameNumber.
+	 */
 
 	private void initComponents(ArrayList<Archer> archers, int gameNumber) {
 		contentPane = new JPanel();

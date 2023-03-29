@@ -4,25 +4,59 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Simulation class which simulates 20000 games
+ * Simulation class which simulates n games.
  * 
  */
 
 public class Simulation {
 
+	/**
+	 * Game list.
+	 */
+
 	private ArrayList<Game> listGame;
+
+	/**
+	 * Won rounds male counter.
+	 */
+
 	private int countWonRoundsMale;
+
+	/**
+	 * Won rounds female counter.
+	 */
+
 	private int countWonRoundsFemale;
+
+	/**
+	 * Total points team 1.
+	 */
+
 	private int totalPointsTeam1;
+
+	/**
+	 * Total points team 2.
+	 */
+
 	private int totalPointsTeam2;
+
+	/**
+	 * Team 1.
+	 */
+
 	private Team team1;
+
+	/**
+	 * Team 2.
+	 */
+
 	private Team team2;
 
 	/**
 	 * 
-	 * Constructor method
+	 * Constructor method.
 	 * 
-	 * @param games
+	 * @param games.
 	 */
 
 	public Simulation(int games) {
@@ -36,7 +70,7 @@ public class Simulation {
 
 	/**
 	 * 
-	 * initTeams void method method that initializes each team from scratch
+	 * initTeams void method method that initializes each team from scratch.
 	 */
 
 	private void initTeams() {
@@ -48,9 +82,9 @@ public class Simulation {
 
 	/**
 	 * 
-	 * initSimulation void method
+	 * initSimulation void method that contains all the simulation logic.
 	 * 
-	 * @param games
+	 * @param games.
 	 */
 
 	private void initSimulation(int games) {
@@ -79,10 +113,10 @@ public class Simulation {
 
 	/**
 	 * 
-	 * obtainTotalWinByGender Gender method that initializes gets the winning gender
-	 * per game and counts it.
+	 * obtainTotalWinByGender Gender method that gets the winning gender per game
+	 * and counts it.
 	 * 
-	 * @return Gender
+	 * @return Gender.
 	 */
 
 	private Gender obtainTotalWinByGender() {
@@ -111,7 +145,7 @@ public class Simulation {
 	 * obtainLuckyArchers String method that gets the list of lucky archers in each
 	 * game in a String.
 	 * 
-	 * @return String
+	 * @return String.
 	 */
 
 	public String obtainLuckyArchers() {
@@ -125,9 +159,9 @@ public class Simulation {
 	/**
 	 * 
 	 * obtainExperienceArchers String methodgets the most experienced archers in a
-	 * string
+	 * String.
 	 * 
-	 * @return String
+	 * @return String.
 	 */
 
 	public String obtainExperienceArchers() {
@@ -144,7 +178,7 @@ public class Simulation {
 	 * obtainWinnerTeam String method that gets the winning team of all games in a
 	 * String.
 	 * 
-	 * @return String
+	 * @return String.
 	 */
 
 	public String obtainWinnerTeam() {
@@ -163,10 +197,10 @@ public class Simulation {
 
 	/**
 	 * 
-	 * obtainGenderTotalWin String method the message of the genre that wins more
-	 * games
+	 * obtainGenderTotalWin String method that returns message of the gender that
+	 * wins more games.
 	 * 
-	 * @return String
+	 * @return String.
 	 */
 
 	public String obtainGenderTotalWin() {
@@ -176,9 +210,9 @@ public class Simulation {
 	/**
 	 * 
 	 * obtainGendersByGame String method which gets a message setting the winning
-	 * gender per game
+	 * gender per game.
 	 * 
-	 * @return String message
+	 * @return String.
 	 */
 
 	public String obtainGendersByGame() {
@@ -191,11 +225,11 @@ public class Simulation {
 
 	/**
 	 * 
-	 * obtainArchersByGame ArrayList<Archer> method that gets the list of archers of
-	 * a game.
+	 * obtainArchersByGame Archer ArrayList method that gets the list of archers on
+	 * a specific game.
 	 * 
-	 * @param game
-	 * @return ArrayList<Archer>
+	 * @param game.
+	 * @return Archer ArrayList.
 	 */
 
 	public ArrayList<Archer> obtainArchersByGame(int game) {

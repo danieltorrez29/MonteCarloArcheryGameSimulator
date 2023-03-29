@@ -3,18 +3,36 @@ package co.edu.uptc.model;
 import java.util.ArrayList;
 
 /**
- * Game class that manages everything related to the game
+ * Game class representing an archery game.
  *
  */
 
 public class Game {
 
+	/**
+	 * Team list.
+	 */
+
 	private Team[] teams;
+
+	/**
+	 * Game rounds.
+	 */
+
 	private int rounds;
+
+	/**
+	 * Winning gender.
+	 */
+
 	private Gender winnerGender;
 
 	/**
-	 * Constructor method creates two teams for the game
+	 * 
+	 * Constructor method.
+	 * 
+	 * @param team1.
+	 * @param team2.
 	 */
 
 	public Game(Team team1, Team team2) {
@@ -26,7 +44,7 @@ public class Game {
 
 	/**
 	 * 
-	 * raffleShoot void method that raffle a launch between teams
+	 * raffleShoot void method that raffle a launch between teams.
 	 */
 
 	public void raffleShoot() {
@@ -37,7 +55,7 @@ public class Game {
 	/**
 	 * 
 	 * determineRoundWinnerArcher void method that determines the winning player in
-	 * the round
+	 * the round.
 	 */
 
 	public void determineRoundWinnerArcher() {
@@ -48,12 +66,12 @@ public class Game {
 
 	/**
 	 * 
-	 * tieBreakerRound Archer method thatmakes a tiebreaker between the archers who
-	 * had more points of groups
+	 * tieBreakerRound Archer method that makes a tiebreaker between the archers who
+	 * had more points of groups and return round winning archer.
 	 * 
-	 * @param a archero with highest team round score 1
-	 * @param b archero with highest team round score 2
-	 * @return Archer winner of the round
+	 * @param a archer with highest team 1 round score.
+	 * @param b archer with highest team 2 round score.
+	 * @return Archer.
 	 */
 
 	private Archer tieBreakerRound(Archer a, Archer b) {
@@ -72,9 +90,9 @@ public class Game {
 	/**
 	 * 
 	 * obtainIndividualWinner Archer method who gets the individual winner of the
-	 * game
+	 * game.
 	 * 
-	 * @return Archer
+	 * @return Archer.
 	 */
 
 	private Archer obtainIndividualWinner() {
@@ -86,9 +104,9 @@ public class Game {
 	/**
 	 * 
 	 * obtainExperienceWinner Archer method who gets the most experienced archer of
-	 * the teams
+	 * the teams.
 	 * 
-	 * @return Archer
+	 * @return Archer.
 	 */
 
 	public Archer obtainExperienceWinner() {
@@ -100,7 +118,7 @@ public class Game {
 	/**
 	 * 
 	 * determineTeamRoundWinner void method which determines the winning team of the
-	 * round
+	 * round.
 	 */
 
 	public void determineTeamRoundWinner() {
@@ -115,9 +133,9 @@ public class Game {
 
 	/**
 	 * 
-	 * obtainTeamWinner Team method that wins the winning team of the game
+	 * obtainTeamWinner Team method that gets the game winning team.
 	 * 
-	 * @return Team winning team
+	 * @return Team.
 	 */
 
 	public Team obtainTeamWinner() {
@@ -129,7 +147,7 @@ public class Game {
 	/**
 	 * 
 	 * determineWinByGender void method that determines the gender of the archer who
-	 * won the game
+	 * won the game.
 	 */
 
 	public void determineWinByGender() {
@@ -138,10 +156,10 @@ public class Game {
 
 	/**
 	 * 
-	 * obtainMostLuckArcher Archer method thatgets the player with more sierte of
-	 * the 2 teams
+	 * obtainMostLuckArcher Archer method that gets the player with more luck of the
+	 * 2 teams.
 	 * 
-	 * @return Archer
+	 * @return Archer.
 	 */
 
 	public Archer obtainMostLuckArcher() {
@@ -154,10 +172,10 @@ public class Game {
 
 	/**
 	 * 
-	 * obtainTeamScore int method that gets the score of the group
+	 * obtainTeamScore int method that gets specific team score.
 	 * 
-	 * @param position team number
-	 * @return int score of the team consulted
+	 * @param position.
+	 * @return int.
 	 */
 
 	public int obtainTeamScore(int position) {
@@ -166,10 +184,10 @@ public class Game {
 
 	/**
 	 * 
-	 * obtainTeam Team method that gets a team on a position list.
+	 * obtainTeam Team method that gets a specific team.
 	 * 
-	 * @param position
-	 * @return
+	 * @param position.
+	 * @return Team.
 	 */
 
 	public Team obtainTeam(int position) {
@@ -178,9 +196,9 @@ public class Game {
 
 	/**
 	 * 
-	 * getRounds int method
+	 * getRounds int method.
 	 * 
-	 * @return int
+	 * @return int.
 	 */
 
 	public int getRounds() {
@@ -189,9 +207,9 @@ public class Game {
 
 	/**
 	 * 
-	 * getTeams Team[] method
+	 * getTeams Team[] method.
 	 * 
-	 * @return Team[]
+	 * @return Team[].
 	 */
 
 	public Team[] getTeams() {
@@ -200,7 +218,7 @@ public class Game {
 
 	/**
 	 * 
-	 * increaseRounds void method
+	 * increaseRounds void method that increases rounds in 1 unit.
 	 */
 
 	public void increaseRounds() {
@@ -210,7 +228,7 @@ public class Game {
 	/**
 	 * 
 	 * giveExtraThrowByThreeThrows void method which gives an extra shot to each
-	 * team
+	 * team.
 	 */
 
 	public void giveExtraThrowByThreeThrows() {
@@ -221,7 +239,7 @@ public class Game {
 	/**
 	 * 
 	 * decreaseResistanceByExperience void method that decreases the resistance by
-	 * experience of each team
+	 * experience of each team.
 	 */
 
 	public void decreaseResistanceByExperience() {
@@ -231,7 +249,7 @@ public class Game {
 
 	/**
 	 * 
-	 * regainRoundPoints void method that restores round points for each team
+	 * regainRoundPoints void method that restores round points for each team.
 	 */
 
 	public void regainRoundPoints() {
@@ -241,9 +259,9 @@ public class Game {
 
 	/**
 	 * 
-	 * getWinnerGender Gender method
+	 * getWinnerGender Gender method.
 	 * 
-	 * @return Gender
+	 * @return Gender.
 	 */
 
 	public Gender getWinnerGender() {
@@ -252,9 +270,9 @@ public class Game {
 
 	/**
 	 * 
-	 * getArchers ArrayList<Archer> method who gets the archers of the 2 teams
+	 * getArchers Archer ArrayList method who gets the archers of both teams.
 	 * 
-	 * @return list of archers in the game
+	 * @return Archer ArrayList.
 	 */
 
 	public ArrayList<Archer> getArchers() {

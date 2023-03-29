@@ -5,21 +5,29 @@ import co.edu.uptc.view.GraphFrame;
 import co.edu.uptc.view.IOManager;
 
 /**
- * Presenter class
+ * Presenter class.
  * 
  */
 
 public class Presenter {
 
 	/**
-	 * Attributes
+	 * Simulation object.
 	 */
 
 	private Simulation simulation;
+
+	/**
+	 * IOManager object.
+	 */
+
 	private IOManager ioManager;
 
 	/**
-	 * Constructor method
+	 * 
+	 * Constructor method.
+	 * 
+	 * @param games.
 	 */
 
 	public Presenter(int games) {
@@ -32,7 +40,7 @@ public class Presenter {
 	 * 
 	 * plotArchersByGame void method that graphs archers points in a game.
 	 * 
-	 * @param game
+	 * @param gameNumber.
 	 */
 
 	private void plotArchersByGame(int gameNumber) {

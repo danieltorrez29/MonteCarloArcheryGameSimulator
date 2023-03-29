@@ -28,12 +28,19 @@ For the proper functioning of the application it is recommended the next prerequ
 ## Built Using
 
 - [JDK 17](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) - Java Development Kit
-- [Eclipse IDE](https://eclipseide.org) - Integrated Development Environment
+- [JFreeChart 1.0.19](https://www.jfree.org/jfreechart/api/javadoc/index.html) - Chart Library
+- [Eclipse IDE 2022-09](https://eclipseide.org) - Integrated Development Environment
+
+## Project Especification
+
+- [Java Documentation](doc/index.html)
 
 ## Authors
 
 - [@danieltorrez29](https://github.com/danieltorrez29)
 - [@JorgeEdilMz](https://github.com/JorgeEdilMz)
+
+See also the list of [contributors](https://github.com/danieltorrez29/MonteCarloArcheryGameSimulator/graphs/contributors) who participated in this project.
 
 ## License
 
