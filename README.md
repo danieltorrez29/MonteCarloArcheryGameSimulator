@@ -33,7 +33,7 @@ For the proper functioning of the application it is recommended the next prerequ
 
 ## Project Especification
 
-- [Java Documentation](doc/index.html)
+- Java Documentation - Open index.html inside doc folder.
 
 ## Authors
 
