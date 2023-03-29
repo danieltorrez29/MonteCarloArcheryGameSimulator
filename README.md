@@ -2,7 +2,7 @@
 
 ---
 
-<p align="center"> Archery game simulator based on Monte Carlo method
+<p align="center"> Archery game simulator based on Monte Carlo method.
     <br> 
 </p>
 
