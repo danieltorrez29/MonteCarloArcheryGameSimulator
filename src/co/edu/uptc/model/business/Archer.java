@@ -1,6 +1,6 @@
-package co.edu.uptc.model;
+package co.edu.uptc.model.business;
 
-import java.util.Random;
+import co.edu.uptc.model.utilities.MiddleSquare;
 
 /**
  * Archer class representing the attributes and actions of an archer.
@@ -28,19 +28,19 @@ public class Archer {
 	private int initialResistance;
 
 	/**
-	 * Archer's resistance per game.
+	 * Archer's resistance per round.
 	 */
 
 	private int resistance;
 
 	/**
-	 * Archer's experience per game.
+	 * Archer's experience per round.
 	 */
 
 	private int experience;
 
 	/**
-	 * Archer's luck per game.
+	 * Archer's luck per round.
 	 */
 
 	private double luck;
@@ -82,6 +82,12 @@ public class Archer {
 	private int countLuck;
 
 	/**
+	 * Random Number object.
+	 */
+
+	private MiddleSquare generator;
+
+	/**
 	 * 
 	 * Constructor method.
 	 * 
@@ -89,6 +95,7 @@ public class Archer {
 	 */
 
 	public Archer(int code) {
+		generator = new MiddleSquare(0, 1);
 		this.code = code;
 		gender = generateGender();
 		initialResistance = generateResistance();
@@ -253,14 +260,14 @@ public class Archer {
 
 	private int throwingMale() {
 		int score = 0;
-		double random = Math.random();
+		double random = generator.generateNi();
 		if (random > 0 && random <= 0.2)
 			score = Shoot.CENTRAL.getScore();
 		else if (random > 0.2 && random <= 0.53)
 			score = Shoot.INTERMEDIATE.getScore();
 		else if (random > 0.53 && random <= 0.93)
 			score = Shoot.OUTSIDE.getScore();
-		else
+		else if (random > 0.93 && random <= 1)
 			score = Shoot.ERROR.getScore();
 		return score;
 	}
@@ -274,7 +281,7 @@ public class Archer {
 	 */
 
 	private int throwingFemale() {
-		double random = Math.random();
+		double random = generator.generateNi();
 		int score = 0;
 		if (random > 0 && random <= 0.3)
 			score = Shoot.CENTRAL.getScore();
@@ -282,7 +289,7 @@ public class Archer {
 			score = Shoot.INTERMEDIATE.getScore();
 		else if (random > 0.68 && random <= 0.95)
 			score = Shoot.OUTSIDE.getScore();
-		else
+		else if (random > 0.95 && random <= 1)
 			score = Shoot.ERROR.getScore();
 		return score;
 	}
@@ -326,7 +333,7 @@ public class Archer {
 	 */
 
 	private Gender generateGender() {
-		return Math.random() >= 0.5 ? Gender.MALE : Gender.FEMALE;
+		return generator.generateNi() >= 0.5 ? Gender.MALE : Gender.FEMALE;
 	}
 
 	/**
@@ -338,7 +345,7 @@ public class Archer {
 	 */
 
 	private int generateResistance() {
-		return (int) (Math.random() * (45 - 25 + 1)) + 25;
+		return (int) (generator.generateNi() * (45 - 25 + 1)) + 25;
 	}
 
 	/**
@@ -349,7 +356,7 @@ public class Archer {
 	 */
 
 	private double generateLuck() {
-		return new Random().nextDouble() * 2 + 1;
+		return generator.generateNi() * 2 + 1;
 	}
 
 	/**
@@ -389,7 +396,7 @@ public class Archer {
 	 */
 
 	public int generateFatigue() {
-		return (int) (Math.random() * 2) + 1;
+		return (int) (generator.generateNi() * 2) + 1;
 	}
 
 	/**

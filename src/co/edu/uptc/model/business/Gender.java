@@ -1,4 +1,4 @@
-package co.edu.uptc.model;
+package co.edu.uptc.model.business;
 
 /**
  * Gender enum that lists the different types of gender determined by a

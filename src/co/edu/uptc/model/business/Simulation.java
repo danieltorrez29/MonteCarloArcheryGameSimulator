@@ -1,5 +1,6 @@
-package co.edu.uptc.model;
+package co.edu.uptc.model.business;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -93,11 +94,9 @@ public class Simulation {
 			Game currentGame = new Game(team1, team2);
 			listGame.add(currentGame); // Add new game to list
 			for (int j = 0; j < 10; j++) { // Rounds loop
-				for (Team team : listGame.get(i).getTeams()) { // Teams loop
-					for (Archer archer : team.getArchers()) { // Archer loop
+				for (Team team : listGame.get(i).getTeams()) // Teams loop
+					for (Archer archer : team.getArchers()) // Archer loop
 						archer.launch();
-					}
-				}
 				currentGame.raffleShoot(); // Raffle shoot
 				if (j >= 2) {
 					currentGame.giveExtraThrowByThreeThrows(); // Give extra shoot
@@ -149,7 +148,7 @@ public class Simulation {
 	 */
 
 	public String obtainLuckyArchers() {
-		String luckyArchersString = "> Archers with more lucky\n";
+		String luckyArchersString = "";
 		for (int i = 0; i < listGame.size(); i++)
 			luckyArchersString += "Game " + (i + 1) + " : Archer " + listGame.get(i).obtainMostLuckArcher().getCode()
 					+ "\n";
@@ -158,14 +157,14 @@ public class Simulation {
 
 	/**
 	 * 
-	 * obtainExperienceArchers String methodgets the most experienced archers in a
+	 * obtainExperiencedArchers String methodgets the most experienced archers in a
 	 * String.
 	 * 
 	 * @return String.
 	 */
 
-	public String obtainExperienceArchers() {
-		String experienceArchersString = "> Archers with more experience  \n";
+	public String obtainExperiencedArchers() {
+		String experienceArchersString = "";
 		for (int i = 0; i < listGame.size(); i++) {
 			experienceArchersString += "Game " + (i + 1) + " : Archer "
 					+ listGame.get(i).obtainExperienceWinner().getCode() + "\n";
@@ -181,7 +180,7 @@ public class Simulation {
 	 * @return String.
 	 */
 
-	public String obtainWinnerTeam() {
+	public String obtainWinningTeam() {
 		determineTeamWinner();
 		Team targetTeam = null;
 		int targetPoints = 0;
@@ -192,7 +191,8 @@ public class Simulation {
 			targetTeam = team2;
 			targetPoints = totalPointsTeam2;
 		}
-		return "TEAM WIN GAME: " + targetTeam.getCode() + " with " + targetPoints + " points";
+		return "TEAM " + targetTeam.getCode() + " with " + new DecimalFormat("#,###,###,##0").format(targetPoints)
+				+ " points";
 	}
 
 	/**
@@ -204,7 +204,7 @@ public class Simulation {
 	 */
 
 	public String obtainGenderTotalWin() {
-		return "GENDER WIN GAME: " + this.obtainTotalWinByGender();
+		return obtainTotalWinByGender().getGender() == 'F' ? "FEMALE" : "MALE";
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class Simulation {
 	 */
 
 	public String obtainGendersByGame() {
-		String gendersByGameString = "> Gender winners  \n";
+		String gendersByGameString = "";
 		for (int i = 0; i < listGame.size(); i++) {
 			gendersByGameString += "Game " + (i + 1) + " : " + listGame.get(i).getWinnerGender().getGender() + "\n";
 		}
@@ -234,5 +234,21 @@ public class Simulation {
 
 	public ArrayList<Archer> obtainArchersByGame(int game) {
 		return listGame.get(game - 1).getArchers();
+	}
+
+	/**
+	 * 
+	 * getArchersPerGame Archer ArrayList method that gets the list of archers per
+	 * game.
+	 * 
+	 * @return Archer ArrayList.
+	 */
+
+	public ArrayList<Archer> getArchersPerGame() {
+		ArrayList<Archer> archers = new ArrayList<Archer>();
+		for (Game game : listGame)
+			for (Archer archer : game.getArchers())
+				archers.add(archer);
+		return archers;
 	}
 }

@@ -1,4 +1,5 @@
-co.edu.uptc.model
+co.edu.uptc.model.business
+co.edu.uptc.model.utilities
 co.edu.uptc.present
 co.edu.uptc.run
 co.edu.uptc.view

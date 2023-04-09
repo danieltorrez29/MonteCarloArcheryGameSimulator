@@ -1,4 +1,4 @@
-package co.edu.uptc.model;
+package co.edu.uptc.model.business;
 
 /**
  * Shoot enum that lists possible sections on the bullseye you can get the
