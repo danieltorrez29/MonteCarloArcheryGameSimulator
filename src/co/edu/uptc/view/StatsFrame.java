@@ -1,17 +1,18 @@
 package co.edu.uptc.view;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.UIManager;
-import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 
-import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
-import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 /**
  * StatsFrame class that shows simulation statistics.
@@ -165,6 +166,7 @@ public class StatsFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(false);
+		setIconImage(Toolkit.getDefaultToolkit().getImage("resources/images/target.png"));
 		setLookAndFeel();
 		initComponents(listener, firstStatisticString, secondStatisticString, thirdStatisticString,
 				fourthStatisticString, fifthStatisticString);

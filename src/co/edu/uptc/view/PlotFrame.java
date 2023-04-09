@@ -2,6 +2,7 @@ package co.edu.uptc.view;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -51,6 +52,7 @@ public class PlotFrame extends JFrame {
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(false);
+		setIconImage(Toolkit.getDefaultToolkit().getImage("resources/images/plot.png"));
 		setLookAndFeel();
 		initComponents(archers);
 		setVisible(true);
