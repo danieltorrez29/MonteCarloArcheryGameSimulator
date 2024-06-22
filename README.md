@@ -56,9 +56,7 @@ For the proper functioning of the application it is recommended the next prerequ
 
 ### **Prerequisites**
 
-- Java SE 17 or higher.
-- 800MB RAM.
-- 4 CPU Cores.
+- Java SE 17 or older.
 
 ## **Usage**
 
