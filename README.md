@@ -79,8 +79,6 @@ For the proper functioning of the application it is recommended the next prerequ
 - [@danieltorrez29](https://github.com/danieltorrez29)
 - [@JorgeEdilMz](https://github.com/JorgeEdilMz)
 
-See also the list of [contributors](https://github.com/danieltorrez29/MonteCarloArcheryGameSimulator/graphs/contributors) who participated in this project.
-
 ## **License**
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
