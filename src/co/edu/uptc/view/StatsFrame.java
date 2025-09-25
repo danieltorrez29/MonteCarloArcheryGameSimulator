@@ -312,7 +312,5 @@ public class StatsFrame extends JFrame {
 		contentPane.add(plotButton);
 
 		getRootPane().setDefaultButton(plotButton);
-
-		setContentPane(contentPane);
 	}
 }
