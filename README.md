@@ -32,7 +32,7 @@ A Java-based Monte Carlo simulation that models competitive archery games betwee
   - [Performance Characteristics](#performance-characteristics)
 - [Built With](#built-with)
 - [Authors](#authors)
-- [License\*\*](#license)
+- [License](#license)
 
 ## Overview
 
@@ -285,6 +285,6 @@ public class MiddleSquare {
 - [@danieltorrez29](https://github.com/danieltorrez29) – Systems and Computer Engineer - Database Specialist.
 - [@JorgeEdilMz](https://github.com/JorgeEdilMz) – Systems and Computer Engineer.
 
-## License**
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
