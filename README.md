@@ -141,7 +141,7 @@ src/
 
 ### UML Class Model
 
-[![UML Class Diagram](./resources/images/diagrams/monte-carlo-archery-game-simulator-class-diagram.jpg)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/diagrams/trivia_client_class_diagram.png)
+[![UML Class Diagram](./resources/images/diagrams/monte-carlo-archery-game-simulator-class-diagram.jpg)](https://raw.githubusercontent.com/danieltorrez29/MonteCarloArcheryGameSimulator/refs/heads/master/resources/images/diagrams/monte-carlo-archery-game-simulator-class-diagram.jpg)
 
 ## Getting Started
 
