@@ -32,7 +32,7 @@ A Java-based Monte Carlo simulation that models competitive archery games betwee
   - [Performance Characteristics](#performance-characteristics)
 - [Built With](#built-with)
 - [Authors](#authors)
-- [License](#license)
+- [**License**](#license)
 
 ## Overview
 
@@ -256,7 +256,7 @@ public class MiddleSquare {
 - Manages dynamic attributes (resistance, experience, luck)
 - Handles fatigue and recovery systems
 
-**Game.java**: Single game management
+- Java SE 17 or older.
 
 - Orchestrates 10-round game structure
 - Manages tie-breaker scenarios
@@ -283,9 +283,6 @@ public class MiddleSquare {
 
 ## Authors
 
-- [@danieltorrez29](https://github.com/danieltorrez29) – Systems and Computer Engineer - Database Specialist.
-- [@JorgeEdilMz](https://github.com/JorgeEdilMz) – Systems and Computer Engineer.
-
-## License
+## **License**
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
