@@ -217,13 +217,17 @@ The simulation generates comprehensive statistics including:
   - Winners by gender for each individual game
   - Overall gender that wins more games across the entire simulation
 
+[![Menu Screen](./resources/images/snapshots/menu-thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/home.png)
+
 ### Data Visualization
 
 The integrated plotting system provides:
 
 - **Performance Charts**: XY line plots showing cumulative points for each archer
-- **Trend Analysis**: Visual comparison of archer performance over first 250 games
+- **Trend Analysis**: Visual comparison of archer performance in specific game
 - **Real-time Updates**: Charts generated from live simulation data
+
+[![Graph Screen](./resources/images/snapshots/graph-thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/game.png)
 
 ## Technical Details
 
